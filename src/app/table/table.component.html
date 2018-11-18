@@ -1,0 +1,41 @@
+<form >
+  <div class="form-group">
+    <label for="title">title</label>
+    <input class="form-control" type="text" id="title" name="title" [(ngModel)]="todo.title">
+
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input class="form-control" type="text" id="description" name="description" [(ngModel)]="todo.description">
+  </div>
+  <div class="form-group">
+    <label for="name">date</label>
+    <input class="form-control" type="text" id="date" name="date" [(ngModel)]="todo.date">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="actif">
+    <label class="form-check-label" for="actif">Actif</label>
+  </div>
+  <button type="submit" class="btn btn-primary btn-bloc" (click)="saveTodo()"> Ajouter</button>
+</form>
+<hr>
+<table class="table table-striped table-bordered">
+  <thead >
+    <tr>
+      <th scope="col">Position</th>
+      <th scope="col">name</th>
+      <th scope="col"> action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of dataSource">
+      <td>{{todo.position}}</td>
+      <td>{{todo.name}}</td>
+      <td>
+        <button type="button" (click)="doDelete(todo)" class="btn btn-danger fa fa-trash-o"> </button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

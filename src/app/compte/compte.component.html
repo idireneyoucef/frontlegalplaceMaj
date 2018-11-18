@@ -1,0 +1,42 @@
+ 
+     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display: flex; justify-content:center;  ">
+        <a class="navbar-brand" [routerLink]="['todo']">Todos</a>
+        <a class="navbar-brand" [routerLink]="['compte']">Compte</a>
+    </nav>
+    <h1 style="display: flex; justify-content: center">{{title}}</h1>
+    <hr>
+    <div>
+  
+      <form class="needs-validation"  >
+        <div class="form-group">
+          <label for="email">email</label>
+          <input class="form-control" type="text"   id="email" name="email" [(ngModel)]="compte.email" required> 
+          <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+        </div> 
+        <button type="submit" class="btn btn-primary btn-bloc" (click)="savecompte()"> Ajouter</button>
+      </form>
+      <hr>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Email</th> 
+            <th scope="col"> action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let compte of pageContent">
+            <td>{{compte.email}}</td> 
+            <td>
+              <button type="submit" (click)="deletecompte(compte.id)" class=" btn btn-danger fa fa-trash-o"></button>
+            </td>
+  
+          </tr>
+  
+        </tbody>
+      </table>
+   
+  
+    </div>
+ 

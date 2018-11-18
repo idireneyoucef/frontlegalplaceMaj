@@ -1,0 +1,13 @@
+ 
+    <h1 style="display: flex; justify-content: center">{{title}}</h1>
+    <hr>
+    <div> 
+      <form class="needs-validation"  >
+        <div class="form-group">
+          <label for="email">email</label>
+          <input class="form-control" type="text"   id="email" name="email" [(ngModel)]="compte.email" required>  
+        </div> 
+        <button type="submit" class="btn btn-primary btn-bloc" (click)="connect()"> Ajouter</button>
+      </form> 
+    </div>
+ 
